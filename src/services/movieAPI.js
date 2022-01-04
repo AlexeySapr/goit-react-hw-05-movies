@@ -11,7 +11,7 @@ const AUTH_KEY =
 axios.defaults.headers.common['Authorization'] = `Bearer ${AUTH_KEY}`;
 
 //экспорт функций запросов
-export default class SearchAPI {
+class SearchAPI {
   #baseUrl = 'https://api.themoviedb.org/3';
   #page = 1;
 
@@ -27,12 +27,12 @@ export default class SearchAPI {
     this.#page = numOfPage;
   }
 
-  ressetPage() {
+  ressetPage = () => {
     this.#page = 1;
-  }
+  };
 
   //запрос на самые популярные фильмы за день
-  async getDayTrandingMovies() {
+  getDayTrandingMovies = async () => {
     try {
       const response = await axios.get(`${this.#baseUrl}/trending/movie/day`);
       const movies = await response.data;
@@ -40,10 +40,10 @@ export default class SearchAPI {
     } catch (error) {
       console.error(error);
     }
-  }
+  };
 
   //запрос на фильм по ID
-  async getMovieById(movieId) {
+  getMovieById = async movieId => {
     try {
       const response = await axios.get(`${this.#baseUrl}/movie/${movieId}`);
       const movie = await response.data;
@@ -51,10 +51,10 @@ export default class SearchAPI {
     } catch (error) {
       console.error(error);
     }
-  }
+  };
 
   //поиск кинофильма по ключевому слову на странице фильмов
-  async getMoviesByQuery() {
+  getMoviesByQuery = async () => {
     try {
       const response = await axios.get(
         `${this.#baseUrl}/search/movie?query=${this.searchQuery}&page=1`,
@@ -64,10 +64,10 @@ export default class SearchAPI {
     } catch (error) {
       console.error(error);
     }
-  }
+  };
 
   //запрос информации о актёрском составе для страницы кинофильма
-  async getMovieCredits(movieId) {
+  getMovieCredits = async movieId => {
     try {
       const response = await axios.get(
         `${this.#baseUrl}/movie/${movieId}/credits`,
@@ -77,10 +77,10 @@ export default class SearchAPI {
     } catch (error) {
       console.error(error);
     }
-  }
+  };
 
   //запрос обзоров для страницы кинофильма
-  async getMovieReviews(movieId) {
+  getMovieReviews = async movieId => {
     try {
       const response = await axios.get(
         `${this.#baseUrl}/movie/${movieId}/reviews?page=1`,
@@ -90,5 +90,8 @@ export default class SearchAPI {
     } catch (error) {
       console.error(error);
     }
-  }
+  };
 }
+
+const apiService = new SearchAPI();
+export default apiService;
