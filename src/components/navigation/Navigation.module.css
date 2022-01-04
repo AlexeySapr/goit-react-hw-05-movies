@@ -2,14 +2,10 @@
   text-decoration: none;
   font-weight: 500;
   font-size: 18px;
-  color: black;
   margin-right: 15px;
+  color: #080808;
 }
 
-.active {
-  color: darkviolet;
+.activeNavLink {
+  color: #04139b;
 }
-
-/* .activeNavLink {
-  color: darkviolet;
-} */
