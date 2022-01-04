@@ -1,5 +1,11 @@
+import Container from '../components/container/Container';
+
 const MoviesPage = () => {
-  return <h1>Movies Page</h1>;
+  return (
+    <Container>
+      <h1>Movies Page</h1>
+    </Container>
+  );
 };
 
 export default MoviesPage;

@@ -12,21 +12,21 @@ import { Routes, Route } from 'react-router-dom';
 // // import initData from './data/Data.json';
 // import { searchService } from './services/searchAPI.js';
 
-import Container from './components/container/Container';
+// import Container from './components/container/Container';
 import Appbar from './components/appbar/Appbar';
 import HomePage from './views/HomePage';
 import MoviesPage from './views/MoviesPage';
 
 const App = () => {
   return (
-    <Container>
+    <>
       <Appbar />
 
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="movies" element={<MoviesPage />} />
       </Routes>
-    </Container>
+    </>
   );
 };
 

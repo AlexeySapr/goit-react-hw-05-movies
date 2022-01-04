@@ -1,5 +1,8 @@
+.navContainer {
+  width: 1200px;
+}
+
 .navLink {
-  text-decoration: none;
   font-weight: 500;
   font-size: 18px;
   margin-right: 15px;
