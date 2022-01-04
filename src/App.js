@@ -14,8 +14,8 @@ import { Routes, Route } from 'react-router-dom';
 
 // import Container from './components/container/Container';
 import Appbar from './components/appbar/Appbar';
-import HomePage from './views/HomePage';
-import MoviesPage from './views/MoviesPage';
+import HomePage from './views/homePage/HomePage';
+import MoviesPage from './views/moviesPage/MoviesPage';
 
 const App = () => {
   return (
