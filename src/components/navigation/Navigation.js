@@ -13,7 +13,7 @@ const Navigation = () => {
         Home
       </NavLink>
       <NavLink
-        to="/movies"
+        to="movies"
         className={({ isActive }) => {
           return isActive ? `${s.navLink} ${s.activeNavLink}` : s.navLink;
         }}

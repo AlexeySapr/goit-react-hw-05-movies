@@ -1,4 +1,5 @@
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
 
 // import Loader from 'react-loader-spinner';
 // import { ToastContainer, toast } from 'react-toastify';
@@ -13,11 +14,18 @@ import './App.css';
 
 import Container from './components/container/Container';
 import Appbar from './components/appbar/Appbar';
+import HomePage from './views/HomePage';
+import MoviesPage from './views/MoviesPage';
 
 const App = () => {
   return (
     <Container>
       <Appbar />
+
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="movies" element={<MoviesPage />} />
+      </Routes>
     </Container>
   );
 };
