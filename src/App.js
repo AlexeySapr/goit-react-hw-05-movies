@@ -11,8 +11,18 @@ import './App.css';
 // // import initData from './data/Data.json';
 // import { searchService } from './services/searchAPI.js';
 
+import Container from './components/container/Container';
+import Appbar from './components/appbar/Appbar';
+
 const App = () => {
-  return null;
+  return (
+    <Container>
+      <Appbar />
+    </Container>
+  );
 };
+
+//контейнер
+//апп
 
 export default App;
