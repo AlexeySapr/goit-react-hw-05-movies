@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import apiService from '../../services/movieAPI';
-import s from './Cast.module.css';
 import CastList from './CastList';
 
 const Cast = () => {

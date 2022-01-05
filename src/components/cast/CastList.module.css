@@ -1,6 +1,6 @@
 .list {
   display: grid;
-  grid-template-columns: repeat(5, 234px);
+  grid-template-columns: repeat(5, 1fr);
 }
 
 .list li {

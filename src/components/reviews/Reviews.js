@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import apiService from '../../services/movieAPI';
-import s from './Reviews.module.css';
 import ReviewsList from './ReviewsList';
 
 const Reviews = () => {
