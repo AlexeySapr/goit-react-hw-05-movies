@@ -7,6 +7,7 @@ import Button from '../components/button/Button';
 
 import apiService from '../services/movieAPI.js';
 import MovieInfoDetails from '../components/movieInfo/MovieInfoDetails';
+import AdditionalMovieInfo from '../components/additionalInfo/AdditionalMovieInfo';
 
 const MovieDetailsPage = () => {
   const [movie, setMovie] = useState(null);
@@ -21,14 +22,16 @@ const MovieDetailsPage = () => {
 
   const navigate = useNavigate();
   const returnBack = () => {
-    navigate(-1);
+    navigate('/', { replace: true });
   };
 
   return (
     <Container>
       <PageTitle title={'Movie Details'} />
-      {movie === null ? <p>...Loading</p> : <MovieInfoDetails movie={movie} />}
       <Button onBackClick={returnBack} />
+      {movie === null ? <p>...Loading</p> : <MovieInfoDetails movie={movie} />}
+      <hr />
+      <AdditionalMovieInfo />
     </Container>
   );
 };
