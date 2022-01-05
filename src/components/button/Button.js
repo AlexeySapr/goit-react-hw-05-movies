@@ -1,10 +1,10 @@
 import s from './Button.module.css';
 import PropTypes from 'prop-types';
 
-const Button = ({ loadMoreBtn }) => {
+const Button = ({ onBackClick }) => {
   return (
-    <button type="button" className={s.button} onClick={loadMoreBtn}>
-      Load more
+    <button type="button" className={s.button} onClick={onBackClick}>
+      Back
     </button>
   );
 };
