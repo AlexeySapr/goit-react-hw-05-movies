@@ -16,6 +16,7 @@ import { Routes, Route } from 'react-router-dom';
 import Appbar from './components/appbar/Appbar';
 import HomePage from './views/HomePage';
 import MoviesPage from './views/MoviesPage';
+import MovieDetailsPage from './views/MovieDetailsPage';
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="movies" element={<MoviesPage />} />
+        <Route path="movies/:movieID" element={<MovieDetailsPage />} />
       </Routes>
     </>
   );
