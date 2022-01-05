@@ -11,7 +11,7 @@ const Reviews = () => {
     apiService
       .getMovieReviews(param.movieID)
       .then(resp => setReviews(resp.results))
-      .catch(error => console.log(error));
+      .catch(error => console.error(error));
   }, [param.movieID]);
 
   return (

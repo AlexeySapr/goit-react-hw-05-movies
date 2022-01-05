@@ -57,7 +57,9 @@ class SearchAPI {
   getMoviesByQuery = async () => {
     try {
       const response = await axios.get(
-        `${this.#baseUrl}/search/movie?query=${this.searchQuery}&page=1`,
+        `${this.#baseUrl}/search/movie?query=${this.searchQuery}&page=${
+          this.#page
+        }`,
       );
       const movie = await response.data;
       return movie;
@@ -83,7 +85,7 @@ class SearchAPI {
   getMovieReviews = async movieId => {
     try {
       const response = await axios.get(
-        `${this.#baseUrl}/movie/${movieId}/reviews?page=1`,
+        `${this.#baseUrl}/movie/${movieId}/reviews?page=${this.#page}`,
       );
       const movie = await response.data;
       return movie;

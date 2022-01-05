@@ -11,7 +11,7 @@ const Cast = () => {
     apiService
       .getMovieCredits(param.movieID)
       .then(resp => setCast(resp.cast))
-      .catch(error => console.log(error));
+      .catch(error => console.error(error));
   }, [param.movieID]);
 
   return <>{cast === null ? <p>...Loading</p> : <CastList cast={cast} />}</>;

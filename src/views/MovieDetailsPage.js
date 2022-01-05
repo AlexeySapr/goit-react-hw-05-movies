@@ -17,7 +17,7 @@ const MovieDetailsPage = () => {
     apiService
       .getMovieById(param.movieID)
       .then(resp => setMovie(resp))
-      .catch(error => console.log(error));
+      .catch(error => console.error(error));
   }, [param.movieID]);
 
   const navigate = useNavigate();

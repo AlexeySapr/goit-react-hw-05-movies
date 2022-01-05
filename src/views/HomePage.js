@@ -7,16 +7,12 @@ import apiService from '../services/movieAPI.js';
 
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
-  // let location = useLocation();
-  // console.log('location: ', location);
-  // const match = useMatch(location.pathname);
-  // // console.log('match: ', match);
-
-  // let param = useParams();
-  // console.log('param: ', param);
 
   useEffect(() => {
-    apiService.getDayTrandingMovies().then(resp => setMovies(resp.results));
+    apiService
+      .getDayTrandingMovies()
+      .then(resp => setMovies(resp.results))
+      .catch(error => console.error(error));
   }, []);
 
   return (
