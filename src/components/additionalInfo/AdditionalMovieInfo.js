@@ -1,19 +1,24 @@
-import { Link, Outlet } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
+import s from './AdditionalMovieInfo.module.css';
 
 const AdditionalMovieInfo = () => {
   return (
     <>
-      <h3>Additional Information</h3>
-      <ul>
+      <h3 className={s.title}>Additional Information</h3>
+      <ul className={s.list}>
         <li>
-          <Link to="cast">Cast</Link>
+          <NavLink to="cast" className={s.link}>
+            Cast
+          </NavLink>
         </li>
         <li>
-          <Link to="reviews">Reviews</Link>
+          <NavLink to="reviews" className={s.link}>
+            Reviews
+          </NavLink>
         </li>
-        <hr />
-        <Outlet />
       </ul>
+      <hr />
+      <Outlet />
     </>
   );
 };

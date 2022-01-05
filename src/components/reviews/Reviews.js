@@ -1,5 +1,31 @@
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import apiService from '../../services/movieAPI';
+import s from './Reviews.module.css';
+import ReviewsList from './ReviewsList';
+
 const Reviews = () => {
-  return <h2>This is REVIEWS!!!!</h2>;
+  const [reviews, setReviews] = useState(null);
+  const param = useParams();
+
+  useEffect(() => {
+    apiService
+      .getMovieReviews(param.movieID)
+      .then(resp => setReviews(resp.results))
+      .catch(error => console.log(error));
+  }, [param.movieID]);
+
+  return (
+    <>
+      {reviews === null ? (
+        <p>...Loading</p>
+      ) : reviews.length === 0 ? (
+        <p>...We don't have any reviews for this movie...</p>
+      ) : (
+        <ReviewsList reviews={reviews} />
+      )}
+    </>
+  );
 };
 
 export default Reviews;
