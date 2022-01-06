@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 
 import PageTitle from '../components/pageTitle/PageTitle';
 import Container from '../components/container/Container';
@@ -12,6 +12,9 @@ import AdditionalMovieInfo from '../components/additionalInfo/AdditionalMovieInf
 const MovieDetailsPage = () => {
   const [movie, setMovie] = useState(null);
   const param = useParams();
+  console.log('param: ', param);
+  const location = useLocation();
+  console.log('location: ', location);
 
   useEffect(() => {
     apiService
@@ -22,9 +25,7 @@ const MovieDetailsPage = () => {
 
   const navigate = useNavigate();
   const returnBack = () => {
-    // navigate('/', { replace: true });
-    // navigate('/', { replace: true });
-    navigate('/', { replace: true, state: { search: 'batman' } });
+    navigate(-1);
   };
 
   return (

@@ -7,8 +7,8 @@ import { IconContext } from 'react-icons';
 const Searchbar = ({ onSubmit }) => {
   const handleSubmit = event => {
     event.preventDefault();
-    const { value } = event.target.query;
-    onSubmit(value);
+    onSubmit(event.target.query.value);
+    event.target.reset();
   };
 
   return (
