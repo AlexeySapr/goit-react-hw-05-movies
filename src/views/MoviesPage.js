@@ -1,10 +1,19 @@
-import PageTitle from '../components/pageTitle/PageTitle';
+import React, { useState } from 'react';
+
 import Container from '../components/container/Container';
+import Searchbar from '../components/searchbar/Searchbar';
 
 const MoviesPage = () => {
+  const [query, setQuery] = useState('');
+
+  const HandleSubmit = query => {
+    console.log('query: ', query);
+    setQuery(query);
+  };
+
   return (
     <Container>
-      <PageTitle title={'Movies Page'} />
+      <Searchbar onSubmit={HandleSubmit} />
     </Container>
   );
 };

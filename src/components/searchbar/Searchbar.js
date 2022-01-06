@@ -12,24 +12,23 @@ const Searchbar = ({ onSubmit }) => {
   };
 
   return (
-    <header className={s.searchbar}>
+    <div className={s.searchbar}>
       <form className={s.form} onSubmit={handleSubmit}>
-        <button type="submit" className={s.formBtn}>
-          <IconContext.Provider value={{ className: `${s.searchIcon}` }}>
-            <FaSearch />
-          </IconContext.Provider>
-        </button>
-
         <input
           className={s.formInput}
           type="text"
           autoComplete="off"
           autoFocus
-          placeholder="Search images and photos"
+          placeholder="Search movies..."
           name="query"
         />
+        <button type="submit" className={s.formBtn}>
+          <IconContext.Provider value={{ className: `${s.searchIcon}` }}>
+            <FaSearch />
+          </IconContext.Provider>
+        </button>
       </form>
-    </header>
+    </div>
   );
 };
 

@@ -22,7 +22,9 @@ const MovieDetailsPage = () => {
 
   const navigate = useNavigate();
   const returnBack = () => {
-    navigate('/', { replace: true });
+    // navigate('/', { replace: true });
+    // navigate('/', { replace: true });
+    navigate('/', { replace: true, state: { search: 'batman' } });
   };
 
   return (

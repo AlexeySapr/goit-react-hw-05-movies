@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
 import PageTitle from '../components/pageTitle/PageTitle';
 import Container from '../components/container/Container';
 import apiService from '../services/movieAPI.js';
+import MovieList from '../components/movieList/MovieList';
 
 const HomePage = () => {
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState(null);
 
   useEffect(() => {
     apiService
@@ -18,13 +18,7 @@ const HomePage = () => {
   return (
     <Container>
       <PageTitle title={'Trending today'} />
-      <ol>
-        {movies.map(movie => (
-          <li key={movie.id}>
-            <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
-          </li>
-        ))}
-      </ol>
+      {movies === null ? <p>...Loading</p> : <MovieList movies={movies} />}
     </Container>
   );
 };
