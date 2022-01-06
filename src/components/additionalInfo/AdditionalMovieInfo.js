@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import s from './AdditionalMovieInfo.module.css';
 
 const AdditionalMovieInfo = () => {
@@ -7,14 +7,14 @@ const AdditionalMovieInfo = () => {
       <h3 className={s.title}>Additional Information</h3>
       <ul className={s.list}>
         <li>
-          <NavLink to="cast" className={s.link}>
+          <Link to="cast" replace="true" className={s.link}>
             Cast
-          </NavLink>
+          </Link>
         </li>
         <li>
-          <NavLink to="reviews" className={s.link}>
+          <Link to="reviews" replace="true" className={s.link}>
             Reviews
-          </NavLink>
+          </Link>
         </li>
       </ul>
       <hr />
