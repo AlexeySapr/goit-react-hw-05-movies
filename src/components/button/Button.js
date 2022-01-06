@@ -1,5 +1,5 @@
-import s from './Button.module.css';
 import PropTypes from 'prop-types';
+import s from './Button.module.css';
 
 const Button = ({ onBackClick }) => {
   return (
@@ -10,7 +10,7 @@ const Button = ({ onBackClick }) => {
 };
 
 Button.propTypes = {
-  loadMoreBtn: PropTypes.func,
+  onBackClick: PropTypes.func.isRequired,
 };
 
 export default Button;

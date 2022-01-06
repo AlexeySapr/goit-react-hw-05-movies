@@ -1,4 +1,6 @@
+import PropTypes from 'prop-types';
 import s from './MovieInfoDetails.module.css';
+
 const MovieInfoDetails = ({ movie }) => {
   const { title, poster_path, vote_average, overview, genres } = movie;
 
@@ -12,7 +14,6 @@ const MovieInfoDetails = ({ movie }) => {
       </div>
 
       <div>
-        {' '}
         <h2 className={s.title}>{title}</h2>
         <p className={s.score}>{`User Score: ${vote_average * 10 + '%'}`}</p>
         <h3 className={s.overviewTitle}>Overview</h3>
@@ -26,6 +27,10 @@ const MovieInfoDetails = ({ movie }) => {
       </div>
     </div>
   );
+};
+
+MovieInfoDetails.propTypes = {
+  movie: PropTypes.object.isRequired,
 };
 
 export default MovieInfoDetails;

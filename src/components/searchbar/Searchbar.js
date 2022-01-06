@@ -1,5 +1,5 @@
-import s from './Searchbar.module.css';
 import PropTypes from 'prop-types';
+import s from './Searchbar.module.css';
 
 import { FaSearch } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
@@ -33,7 +33,7 @@ const Searchbar = ({ onSubmit }) => {
 };
 
 Searchbar.propTypes = {
-  onSubmit: PropTypes.func,
+  onSubmit: PropTypes.func.isRequired,
 };
 
 export default Searchbar;
