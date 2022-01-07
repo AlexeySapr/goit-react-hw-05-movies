@@ -4,13 +4,17 @@ import s from './MovieList.module.css';
 
 const MovieList = ({ movies }) => {
   const location = useLocation();
-  console.log('location: ', location);
 
   return (
     <ol>
       {movies.map(movie => (
         <li key={movie.id} className={s.item}>
-          <Link to={`/movies/${movie.id}`} className={s.link}>
+          {/* <Link to={`/movies/${movie.id}`} className={s.link}> */}
+          <Link
+            to={`/movies/${movie.id}`}
+            state={{ from: location }}
+            className={s.link}
+          >
             {movie.title}
           </Link>
         </li>

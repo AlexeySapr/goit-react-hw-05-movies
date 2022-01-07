@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 
 import PageTitle from '../components/pageTitle/PageTitle';
 import Container from '../components/container/Container';
@@ -10,9 +10,13 @@ import MovieInfoDetails from '../components/movieInfo/MovieInfoDetails';
 import AdditionalMovieInfo from '../components/additionalInfo/AdditionalMovieInfo';
 
 const MovieDetailsPage = () => {
-  const [movie, setMovie] = useState(null);
   const param = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
+  const [movie, setMovie] = useState(null);
+  const [fromLocation] = useState(() => {
+    return location;
+  });
 
   useEffect(() => {
     apiService
@@ -22,7 +26,12 @@ const MovieDetailsPage = () => {
   }, [param.movieID]);
 
   const returnBack = () => {
-    navigate(-1);
+    if (fromLocation.state !== null) {
+      const { pathname, search } = fromLocation.state.from;
+      navigate(pathname + search ?? '/');
+    } else {
+      navigate('/');
+    }
   };
 
   return (

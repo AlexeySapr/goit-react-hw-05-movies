@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useSearchParams, useLocation } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import apiService from '../services/movieAPI';
 
 import Container from '../components/container/Container';
@@ -13,9 +13,6 @@ const MoviesPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const searchParamsQuery = searchParams.get('query');
-
-  const location = useLocation();
-  console.log('location: ', location);
 
   //при изменении запроса в форме поиска фильмов
   useEffect(() => {
