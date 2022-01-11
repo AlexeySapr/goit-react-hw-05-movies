@@ -22,7 +22,7 @@ const MovieDetailsPage = () => {
     apiService
       .getMovieById(param.movieID)
       .then(resp => setMovie(resp))
-      .catch(error => console.error(error));
+      .catch(error => console.log(error));
   }, [param.movieID]);
 
   const returnBack = () => {

@@ -38,7 +38,7 @@ const MoviesPage = () => {
         setIsLoading(false);
       })
       .catch(error => {
-        console.error(error);
+        console.log(error);
         setIsLoading(false);
       });
   }, [searchParamsQuery]);

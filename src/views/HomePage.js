@@ -12,7 +12,9 @@ const HomePage = () => {
     apiService
       .getDayTrandingMovies()
       .then(resp => setMovies(resp.results))
-      .catch(error => console.error(error));
+      .catch(error => {
+        console.log(error);
+      });
   }, []);
 
   return (

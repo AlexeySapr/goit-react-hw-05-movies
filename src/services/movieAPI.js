@@ -38,7 +38,7 @@ class SearchAPI {
       const movies = await response.data;
       return movies;
     } catch (error) {
-      console.error(error);
+      throw error.response.data.status_message;
     }
   };
 
@@ -49,7 +49,7 @@ class SearchAPI {
       const movie = await response.data;
       return movie;
     } catch (error) {
-      console.error(error);
+      throw error.response.data.status_message;
     }
   };
 
@@ -64,7 +64,7 @@ class SearchAPI {
       const movie = await response.data;
       return movie;
     } catch (error) {
-      console.error(error);
+      throw error.response.data.status_message;
     }
   };
 
@@ -77,7 +77,7 @@ class SearchAPI {
       const movie = await response.data;
       return movie;
     } catch (error) {
-      console.error(error);
+      throw error.response.data.status_message;
     }
   };
 
@@ -90,7 +90,7 @@ class SearchAPI {
       const movie = await response.data;
       return movie;
     } catch (error) {
-      console.error(error);
+      throw error.response.data.status_message;
     }
   };
 }
